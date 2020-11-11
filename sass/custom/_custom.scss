@@ -1,0 +1,194 @@
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+/* Small menu. */
+.main-navigation.toggled .nav-menu {
+	visibility: visible;
+	display: block;
+	opacity: 1;
+}
+
+nav {
+		
+	@media #{$small-and-down} {
+		.nav-menu{
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+			background-color: $secondary_color;
+			margin-left: -11.11%;
+    		padding-left: 11.11%;    
+    		width: 122%;			
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: $navbar-line-height-mobile;		
+			transition: visibility .2s, opacity .2s ease-out;	
+			a:hover, a:focus, a:active {
+			    color: $primary_color !important;
+			}
+		}
+	}
+	.menu-toggle{
+		display: inline-block;
+		height: 36px;
+		line-height: 36px;
+		margin-right: 18px;
+		margin-top: 8px;
+		margin-bottom: 8px;
+		i{
+			height: 36px;
+			line-height: 36px;
+		}
+	}
+		
+	.brand-logo{
+		margin-left: 0px;
+		height: $navbar-line-height-mobile;
+		position: relative;
+		img{
+			line-height: $navbar-line-height-mobile;
+			margin-top: 4px;
+			margin-bottom: 4px;
+			height: 48px;
+			width: 48px;					
+		}
+	}
+	
+	a.site-title{
+		display: inline-block;
+		position: relative;
+		line-height: $navbar-line-height-mobile;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 12px;
+		font-size: 2rem;
+		color: white !important;		
+	}
+	
+	a.site-title:hover, a.site-title:focus, a.site-title:active{
+		color: white !important;
+	}
+	
+	@media #{$medium-and-up} {
+		.menu-toggle{
+			display: none;
+			position: relative;
+		}
+		
+		.brand-logo{
+			height: $navbar-line-height;
+			img{
+				line-height: $navbar-line-height;
+				margin-top: 8px;
+				margin-bottom: 8px;
+			}
+		}
+		
+		.site-title{
+			line-height: $navbar-line-height;
+		}
+		
+		.nav-menu {
+			visibility: visible;
+			display: flex;
+			opacity: 1;
+		}
+	}
+	
+	
+	
+	a:visited{
+		color: white;
+	}
+	
+	a:hover, a:focus, a:active {
+	    color: $secondary_color !important;
+	}
+}
+
+.page-footer{
+	padding-bottom: 20px;
+	/*position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;*/
+}
+
+//Sobreescrit de _posts-and-pages.scss
+.post, .page{
+	margin: 0 !important;	
+}
+
+#post, #page{
+	background-color: white;
+}
+
+body{
+	background-color: $secondary_color;
+	height: 100%;
+}
+
+.bigblockquote{
+	font-size: 2em;
+}
+
+div.wpcf7-form-control-wrap{display:inline}
+div.wpcf7-list-item {
+    display: inline-block;
+    margin: 0 0 0 1em;
+}
+div.wpcf7-list-item-label::before,
+div.wpcf7-list-item-label::after {
+    content: " ";
+}
+
+fieldset{
+	border: none;
+}
+
+.row-short{
+	@extend .row;
+	margin-bottom: 0px;
+}
+
+/*--------------------------------------------------------------
+# Outlined input fields
+--------------------------------------------------------------*/
+.input-field.input-outlined {
+  > input, textarea {
+    border: 2px solid #ddd;
+    padding-left: 12px;
+	padding-right: 12px;
+    width: calc(100% - 2.5rem);
+    float: none;
+    display: block;
+    border-radius: 4px;
+    transition: box-shadow, border-color 0.15s;
+    &:focus:not([readonly]) {
+      border-color:$secondary_color;
+      box-shadow: 0 1px 0 0px $secondary_color;
+    }
+  }
+  > label {
+    left: 27px;
+    display: inline-flex;
+    width: auto !important;
+    &.active {
+      background: white;
+      border-left: 4px solid white;
+      border-right: 4px solid white;
+      transform: translateY(-1.75rem);
+      top: 1rem;
+    }
+  }
+}
+
+.input-field.input-outlined .prefix ~ input, .input-field.input-outlined .prefix ~ textarea
+, .input-field.input-outlined .prefix ~ label, .input-field.input-outlined .prefix ~ .validate ~ label
+, .input-field.input-outlined .prefix ~ .helper-text, .input-field.input-outlined .prefix ~ .autocomplete-content {
+    margin-left: 3rem;
+    width: 92%;
+    width: calc(100% - 5.5rem);
+}
+
+

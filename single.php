@@ -4,14 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _s
+ * @package us_marcrh
  */
 
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+	<main id="primary" class="site-main container">
+		<div class="row">
+			<div class="s8">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -20,8 +21,8 @@ get_header();
 
 			the_post_navigation(
 				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', '_s' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', '_s' ) . '</span> <span class="nav-title">%title</span>',
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'us_marcrh' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'us_marcrh' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 
@@ -31,10 +32,13 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+		
+		get_sidebar();
 		?>
-
+			</div>
+		</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
